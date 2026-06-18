@@ -1,0 +1,9 @@
+deliverables:
+  - type: code_change
+    path: src/main/kotlin/com/fito/cases/brokenjson/App.kt
+    description: "Repair the GET /users/{id} handler so it responds with application/json."
+  - type: tests_passing
+    target: ./gradlew test
+    description: "All tests in AppTest must pass."
+  - type: written_explanation
+    description: "A short PR note explaining the root cause and why ctx.json() resolves it."

@@ -1,0 +1,10 @@
+artifacts:
+  - path: src/main/kotlin/com/fito/cases/brokenjson/App.kt
+    role: target
+    description: "The Javalin app; the GET /users/{id} handler is where the defect lives."
+  - path: src/test/kotlin/com/fito/cases/brokenjson/AppTest.kt
+    role: evidence
+    description: "The failing content-type test that demonstrates the bug."
+  - path: build.gradle.kts
+    role: reference
+    description: "Build and dependencies (Javalin 7, Jackson, javalin-testtools)."

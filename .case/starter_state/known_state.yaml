@@ -1,0 +1,8 @@
+branch: v1.0.0
+build_status: failing
+lint_errors: false
+failing_tests:
+  - "AppTest > GET users-id responds with the application-json content type"
+known_errors:
+  - type: wrong_content_type
+    description: "GET /users/{id} responds with Content-Type text/plain instead of application/json."

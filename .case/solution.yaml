@@ -1,0 +1,7 @@
+branch: case/solution-v1.0.0
+visibility: post_completion
+notes: solution/notes.md
+acceptable_solutions:
+  - id: primary
+    branch: case/solution-v1.0.0
+    description: "Replace the hand-built result string with ctx.json(User(id, name))."

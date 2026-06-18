@@ -1,0 +1,13 @@
+competencies:
+  - knowledge_component: execution-fact:javalin.ctx-json-sets-result-and-content-type
+    bloom_level: APPLICATION
+    description: "Apply the fact that ctx.json() serializes the object, stages the result, and sets Content-Type to application/json — using it to repair the endpoint."
+    weight: primary
+  - knowledge_component: concept:javalin.context
+    bloom_level: COMPREHENSION
+    description: "Explain how the response is staged on the Context's write side (result / json / header)."
+    weight: secondary
+  - knowledge_component: concept:javalin.handler-chain
+    bloom_level: COMPREHENSION
+    description: "Recognize that the request flows through the endpoint and after-handlers, which share one Context."
+    weight: secondary

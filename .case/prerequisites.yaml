@@ -1,0 +1,5 @@
+prerequisites:
+  - knowledge_component: concept:javalin.handler
+    bloom_level: COMPREHENSION
+    description: "Must already understand the Handler contract: a void-returning function that expresses the response through effects on the Context."
+    mandatory: true

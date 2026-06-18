@@ -1,0 +1,44 @@
+criteria:
+  - id: fix-json-content-type
+    title: "Endpoint returns JSON with the correct Content-Type"
+    knowledge_component: execution-fact:javalin.ctx-json-sets-result-and-content-type
+    bloom_level: APPLICATION
+    weight: 70
+    levels:
+      - score: 0
+        label: not_achieved
+        description: "The content-type test still fails; the endpoint does not return application/json."
+      - score: 1
+        label: partial
+        description: "Content-Type is corrected by hand-setting the header, but the body is still serialized by hand."
+      - score: 2
+        label: achieved
+        description: "The handler uses ctx.json(...), so the result and Content-Type are set together and the tests pass."
+      - score: 3
+        label: exemplary
+        description: "Uses ctx.json(...) and explains in the PR why one call replaces both the manual result and the header write."
+    evaluation_method:
+      type: automated
+      command: "./gradlew test"
+      passing_condition: "the AppTest content-type test passes (gradle test exits 0)"
+  - id: explain-context-staging
+    title: "Explain how the response is staged on the Context"
+    knowledge_component: concept:javalin.context
+    bloom_level: COMPREHENSION
+    weight: 30
+    levels:
+      - score: 0
+        label: not_achieved
+        description: "No explanation of how the response is produced."
+      - score: 1
+        label: partial
+        description: "Mentions ctx.json without explaining what it stages."
+      - score: 2
+        label: achieved
+        description: "Explains that ctx.json serializes the object, stages it as the result, and sets the content type on the Context."
+      - score: 3
+        label: exemplary
+        description: "Also notes the response commits after the handler chain, so a later after-handler can still decorate it."
+    evaluation_method:
+      type: ai
+      prompt_hint: "Look for: ctx.json stages the serialized body and sets Content-Type; the response is committed after the handler chain completes."
