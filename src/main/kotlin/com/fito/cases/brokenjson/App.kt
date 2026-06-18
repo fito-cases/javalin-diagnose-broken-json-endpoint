@@ -9,14 +9,14 @@ data class User(val id: Int, val name: String)
 /**
  * Handler for `GET /users/{id}`.
  *
- * The endpoint is supposed to return the user as a JSON document with
- * `Content-Type: application/json`. A failing test in `AppTest` proves it does not yet —
- * diagnosing why is the case.
+ * Returns the user as a JSON document with `Content-Type: application/json` by serializing
+ * through the Context with `ctx.json(...)`.
  */
 fun getUser(ctx: Context) {
     val id = ctx.pathParamAsClass("id", Int::class.java).get()
-    val user = User(id, "Ada")
-    ctx.result("""{"id":${user.id},"name":"${user.name}"}""")
+    // ctx.json serializes the object, stages it as the result, and sets
+    // Content-Type: application/json — all in one call.
+    ctx.json(User(id, "Ada"))
 }
 
 /** Builds the (unstarted) Javalin app so tests can drive it without binding a port. */
