@@ -16,7 +16,7 @@ data class User(val id: Int, val name: String)
 fun getUser(ctx: Context) {
     val id = ctx.pathParamAsClass("id", Int::class.java).get()
     val user = User(id, "Ada")
-    ctx.result("""{"id":${user.id},"name":"${user.name}"}""")
+    ctx.json(user)
 }
 
 /** Builds the (unstarted) Javalin app so tests can drive it without binding a port. */
