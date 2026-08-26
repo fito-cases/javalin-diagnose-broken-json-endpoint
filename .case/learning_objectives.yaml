@@ -1,4 +1,4 @@
-competencies:
+learning_objectives:
   - knowledge_component: execution-fact:javalin.ctx-json-sets-result-and-content-type
     bloom_level: APPLICATION
     description: "Apply the fact that ctx.json() serializes the object, stages the result, and sets Content-Type to application/json — using it to repair the endpoint."
