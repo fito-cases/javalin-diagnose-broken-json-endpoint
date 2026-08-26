@@ -9,4 +9,4 @@ An internal users API built on Javalin returns `GET /users/{id}` responses that 
 
 ## Getting started
 
-Fork the `v1.0.0` branch, run `./gradlew test`, and read the failing content-type test. Fix the `GET /users/{id}` handler in `App.kt` so the suite passes, then open a pull request.
+Open the case on its starter branch, run `./gradlew test`, and read the failing content-type test. Fix the `GET /users/{id}` handler in `App.kt` so the suite passes, then open a pull request.

@@ -1,5 +1,5 @@
-**Rename the learning-objectives file and its root key.** `.case/competencies.yaml` is now `.case/learning_objectives.yaml`, and its root key reads `learning_objectives:` rather than `competencies:`. The file has always described what the case teaches; in Fito a *competence* is a different thing — a tracked skill on a learner's profile, not something a case declares.
+**Correct the getting-started instructions, which named a superseded version.** The storefront told learners to fork the `v1.0.0` branch. This case has served `v1.1.0` since the learning-objectives rename, and a checkout at `v1.0.0` fails the current `.case/` validator.
 
-This version also carries the **prerequisite descriptions** through to the case page for the first time. The text was already written in `.case/prerequisites.yaml`, but the publish pipeline dropped it, so a learner could not read what each prerequisite meant.
+The instruction now names the starter branch without pinning a version, so it cannot go stale at the next publish.
 
-Same-reference perfection — the knowledge references, Bloom levels, rubric and solution are untouched.
+Text-only — no knowledge reference, rubric, quiz, starter code or solution changed.
