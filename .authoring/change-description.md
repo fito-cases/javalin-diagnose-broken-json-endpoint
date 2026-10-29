@@ -1,5 +1,5 @@
-**Correct the getting-started instructions, which named a superseded version.** The storefront told learners to fork the `v1.0.0` branch. This case has served `v1.1.0` since the learning-objectives rename, and a checkout at `v1.0.0` fails the current `.case/` validator.
+**Score the handler-chain criterion by AI review, without a test gate.** Fito no longer accepts `hybrid` or `human` evaluation, because nobody can score a `human` criterion yet, and a `hybrid` one can fall through to `human`. So `response-flows-through-handler-chain` is now an `ai` criterion. Its prompt hint comes from the old fallback hint.
 
-The instruction now names the starter branch without pinning a version, so it cannot go stale at the next publish.
+The test suite still runs under `fix-json-content-type`, so this criterion's levels no longer mention it. Its knowledge component, Bloom level and weight are unchanged.
 
-Text-only — no knowledge reference, rubric, quiz, starter code or solution changed.
+No other knowledge reference, criterion, quiz question, starter code or solution changed.
