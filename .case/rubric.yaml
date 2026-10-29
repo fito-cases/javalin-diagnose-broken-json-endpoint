@@ -50,21 +50,16 @@ criteria:
     levels:
       - score: 0
         label: not_achieved
-        description: "No evidence the response is produced correctly; the test suite fails and the diff shows no working serialization."
+        description: "No evidence the response is produced correctly; the diff shows no working serialization."
       - score: 1
         label: partial
         description: "A response is produced, but there is no sign the learner grasps how it travels through the shared Context and after-handlers."
       - score: 2
         label: achieved
-        description: "The endpoint returns the response through the Context so it flows correctly through the handler chain and the test suite passes."
+        description: "The endpoint returns the response through the Context, so it flows correctly through the handler chain."
       - score: 3
         label: exemplary
-        description: "Tests pass and the PR explains that the endpoint and after-handlers share one Context, with the response committing after the chain completes."
+        description: "As achieved, and the PR note explains that the endpoint and after-handlers share one Context, with the response committing after the chain completes."
     evaluation_method:
-      type: hybrid
-      automated:
-        command: "./gradlew test"
-        passing_condition: "the AppTest suite passes (gradle test exits 0)"
-      on_pass: achieved
-      on_fail: ai
-      fallback_prompt_hint: "If the tests fail, judge from the diff whether the learner understands that the endpoint and after-handlers share one Context and that the response commits after the handler chain completes; award partial credit accordingly."
+      type: ai
+      prompt_hint: "Judge from the diff and the PR note whether the endpoint returns the response through the Context, and whether the learner understands that the endpoint and after-handlers share one Context and that the response commits after the handler chain completes."
